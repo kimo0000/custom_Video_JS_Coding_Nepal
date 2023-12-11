@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Video Player JS Coding Nepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d575fe1d69.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <div class="bar">
+          <div class="progress_bar">
+            <span class="timer_now">00:00</span>
+          </div>
+        </div>
+        <div class="inp">
+          <button class="volume_btn">
+            <i class="fa-solid fa-volume-low volume"></i>
+            <!-- <i class="fa-solid fa-volume-xmark volume"></i> -->
+          </button>
+          <input type="range" min="0" max="1" value=".5" step="any" />
+          <div class="time_video">
+            <span class="start_timer">00:00</span> /
+            <span class="end_timer">00:00</span>
+          </div>
+        </div>
+        <div class="playing">
+          <button>
+            <i class="fa-solid fa-backward btn" id="back"></i>
+          </button>
+          <button>
+            <i class="fa-solid fa-play play"></i>
+            <!-- <i class="fa-solid fa-pause play"></i> -->
+          </button>
+          <button>
+            <i class="fa-solid fa-forward btn" id="forward"></i>
+          </button>
+        </div>
+        <div class="screen">
+          <button>
+            <i class="fa-regular fa-circle-play speed"></i>
+            <ul class="options_speed">
+              <li data-speed="2">2</li>
+              <li data-speed="1.5">1.5</li>
+              <li class="active" data-speed="1">Normal</li>
+              <li data-speed="0.75">0.75</li>
+              <li data-speed="0.5">0.5</li>
+            </ul>
+          </button>
+          <button>
+            <i class="fa-regular fa-clone img_incursion"></i>
+          </button>
+          <button>
+            <i class="fa-solid fa-expand full_screen"></i>
+            <!-- <i class="fa-solid fa-compress"></i> -->
+          </button>
+        </div>
+      </div>
+      <video
+        src="videos/video.mp4"
+        class="video"
+        width="450px"
+        height="250"
+      ></video>
+    </div>
+  </body>
+</html>

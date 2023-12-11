@@ -1,0 +1,145 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 80%;
+  max-width: 550px;
+  position: relative;
+}
+.controls {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 5px;
+  border-radius: 12px;
+  color: #fff;
+  z-index: 1;
+  /* overflow: hidden; */
+}
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.bar:hover .progress_bar span:first-of-type,
+.bar:hover .progress_bar span:last-of-type {
+  display: block;
+}
+.bar .progress_bar {
+  scroll-behavior: smooth;
+  width: 0%;
+  height: 100%;
+  background-color: blueviolet;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.progress_bar span:first-of-type {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  cursor: pointer;
+  display: none;
+}
+.progress_bar span:last-of-type {
+  font-size: 10px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+.controls::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #00000025;
+  z-index: -1;
+}
+.inp,
+.playing,
+.screen {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.inp {
+  max-width: 170px;
+}
+.inp input {
+  width: 30%;
+  accent-color: blueviolet;
+  height: 3px;
+}
+.inp button,
+.playing button,
+.screen button {
+  background: none;
+  color: #fff;
+  cursor: pointer;
+}
+.screen {
+  position: relative;
+}
+.options_speed {
+  position: absolute;
+  background-color: #fff;
+  top: -130px;
+  left: -25px;
+  list-style: none;
+  color: #000;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.options_speed.show {
+  height: 120px;
+  overflow: visible;
+  pointer-events: auto;
+}
+.options_speed li {
+  padding: 2px;
+}
+.options_speed li.active {
+  background-color: blueviolet;
+  color: white;
+}
+.container .video {
+  width: 100%;
+  height: 50%;
+  border-radius: 12px;
+}
